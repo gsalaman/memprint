@@ -105,15 +105,15 @@ void memprint_CRGB( void *mem, int num)
   int i;
   int j;
   char tmp_str[40];
-  char *byte_ptr;
+  unsigned char *byte_ptr;
   
   Serial.println("Addr\tR\tG\tB");
 
-  byte_ptr = (uint8_t *) mem;
+  byte_ptr = (unsigned char *) mem;
   
   for (i = 0; i < num; i++)
   {
-    sprintf(tmp_str, "0x%04x\t", (unsigned int) mem);
+    sprintf(tmp_str, "0x%04x\t", (unsigned int) byte_ptr);
     Serial.print(tmp_str);
 
     for (j = 0; j < 3; j++)
